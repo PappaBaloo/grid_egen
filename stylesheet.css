@@ -1,0 +1,109 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 7vh;
+  background-color: #133c55;
+  font-family: "PT Sans", sans-serif;
+}
+
+.Title {
+  color: whitesmoke;
+  letter-spacing: 6px;
+  font-size: 20pt;
+}
+
+.directory {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+.directory a {
+  color: whitesmoke;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+.directory li {
+  list-style: none;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: whitesmoke;
+  margin: 5px;
+  transition: all 0.4s ease;
+}
+
+.directory-active {
+  transform: translateX(0%) !important;
+}
+
+@media screen and (max-width: 1754px) {
+  .directory {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  .directory {
+    position: fixed;
+    right: 0px;
+    height: 80vh;
+    top: 5vh;
+    background-color: #133c55;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .directory li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+@keyframes directoryfade {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.trans .bun1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.trans .meat {
+  opacity: 0;
+}
+
+.trans .bun2 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
